@@ -1,30 +1,28 @@
-# Project 1: Data Cleaning & Preparation 🧹
+# Project 2: Exploratory Data Analysis (EDA)
 
-## 📌 Project Overview
+## About this project
 
-This project focuses on cleaning and preparing a raw dataset for further data analysis.
+This is my second project for the data analytics internship.
 
-The main goal is to identify and handle missing values, check for duplicate records, correct data formats, and prepare the dataset for reliable analysis.
+For this project, I used an e-commerce order dataset and explored it to understand what was happening in the data. I calculated basic statistics, checked trends, looked for unusual values, and wrote down the main observations.
 
-## 🎯 Objectives
+## What I worked on
 
-- Identify missing or null values
-- Remove duplicate records
-- Correct date and numeric data formats
-- Clean text fields
-- Prepare a final dataset ready for analysis
+- Calculated count, mean, and median
+- Compared products based on orders and revenue
+- Checked payment method usage
+- Looked at order-status patterns
+- Compared referral sources
+- Checked monthly and yearly revenue
+- Looked for outliers using the IQR method
+- Checked relationships between numerical columns
+- Summarised the main findings
 
-## 🛠️ Tools Used
+## Dataset
 
-- Microsoft Excel
-- Basic Data Cleaning Techniques
-- Data Preparation
+The dataset contains **1,200 orders** and **14 columns**.
 
-## 📂 Dataset
-
-The dataset contains **1,200 records** and **14 columns** related to customer orders.
-
-### Columns
+Some important columns are:
 
 - OrderID
 - Date
@@ -32,83 +30,73 @@ The dataset contains **1,200 records** and **14 columns** related to customer or
 - Product
 - Quantity
 - UnitPrice
-- ShippingAddress
 - PaymentMethod
 - OrderStatus
-- TrackingNumber
 - ItemsInCart
 - CouponCode
 - ReferralSource
 - TotalPrice
 
-## 🧹 Data Cleaning Performed
+The data covers orders from **January 2023 to June 2025**.
 
-### 1. Missing Values
+## Some findings
 
-The `CouponCode` column contained **309 missing values**.
+- Total revenue is **1,264,761.96**.
+- The average order value is about **1,053.97**, while the median is **823.62**.
+- **Chair** generated the highest total revenue among the products.
+- **Printer** had the highest number of orders.
+- **Online** was the most commonly used payment method.
+- **Credit Card** generated the highest total revenue among the payment methods.
+- **Instagram** was the strongest referral source by revenue.
+- **June 2024** was the highest-revenue month.
+- **Cancelled and Returned** orders together made up **41.42%** of all orders.
+- The IQR check found **8 high-value TotalPrice outliers**.
 
-These missing values were replaced with:
+## A note about the outliers
 
-`No Coupon`
+I did not automatically delete the outliers.
 
-After cleaning, there are **0 missing values** remaining in the dataset.
+The unusual TotalPrice values are high-value orders, and they may be genuine purchases rather than data errors. So I kept them and listed the highest-value orders separately for review.
 
-### 2. Duplicate Records
+## A note about 2025
 
-The dataset was checked for duplicate rows.
+The 2025 data only covers January to June. Because of this, I did not treat 2025 as a complete-year comparison with 2023 and 2024.
 
-- Duplicate rows found: **0**
-- Duplicate rows removed: **0**
+## What is inside the Excel file?
 
-### 3. Date Formatting
+The `EDA_Analysis.xlsx` file contains:
 
-The `Date` column was checked and converted to a proper date format.
+- Basic Statistics
+- Product Analysis
+- Payment Analysis
+- Order Status
+- Referral Analysis
+- Coupon Usage
+- Yearly Trend
+- Monthly Trend
+- Outlier Analysis
+- Correlation
+- Top 10 Orders
 
-Format used:
+Charts are also included for some of the main comparisons and trends.
 
-`YYYY-MM-DD`
+## Tools used
 
-### 4. Numeric Formatting
+- Excel
+- Python
+- Pandas
+- GitHub
 
-The following columns were checked and converted to numeric data types:
+## What I learned
 
-- Quantity
-- UnitPrice
-- ItemsInCart
-- TotalPrice
+This project helped me understand that EDA is more than just calculating numbers.
 
-### 5. Text Cleaning
+The useful part is looking at the results and asking questions such as which product is doing better, which month had higher revenue, and whether an unusual value is actually an error.
 
-Text fields were checked for unnecessary leading and trailing spaces and standardized where required.
+I also learned that an outlier should be checked before removing it.
 
-## ✅ Final Result
+## Conclusion
 
-| Cleaning Task | Result |
-|---|---|
-| Original Records | 1,200 |
-| Original Columns | 14 |
-| Missing Values Found | 309 |
-| Missing Values Handled | 309 |
-| Duplicate Records Found | 0 |
-| Duplicate Records Removed | 0 |
-| Remaining Missing Values | 0 |
-| Final Records | 1,200 |
-| Final Columns | 14 |
+Overall, this project gave me good practice with basic data analysis. I was able to find patterns in products, payments, order status, referrals, and revenue over time.
 
-## 📁 Files
-
-- `cleaned_dataset.xlsx` - Final cleaned dataset
-
-## 🔍 Conclusion
-
-The raw dataset was successfully cleaned and prepared for further data analysis. Missing values were handled, duplicate records were checked, data formats were corrected, and text fields were cleaned.
-
-The final dataset contains **1,200 clean records with no remaining missing values**, making it suitable for the next stage of the data analytics project.
-
----
-
-## 👩‍💻 Project
-
-**Project:** Data Cleaning & Preparation  
-**Domain:** Data Analytics  
-**Purpose:** Internship Project
+It also helped me understand how raw business data can be turned into simple observations that can be used for further analysis.
